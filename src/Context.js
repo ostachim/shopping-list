@@ -12,7 +12,6 @@ const Context = () => {
                 <Route component={NewList} path="/nowalista" />
                 <Route component={ActiveLists} path="/aktywnelisty" />
                 <Route component={ListsHistory} path="/historia" />
-
             </Switch>
             
         </>

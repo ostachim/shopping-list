@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Link} from 'react-router-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
 import Nav from './pages/Nav';
 import Context from './Context.js';
 
