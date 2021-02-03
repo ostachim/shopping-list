@@ -1,0 +1,142 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color:#121212;
+    /* 1F1B24 */
+    width:100vw;
+    height:100vh;
+    color:white;
+}
+
+.newList{
+    text-align:center;
+    width:60vw;
+    margin:0 auto;
+}
+
+.newList h1{
+    margin-bottom:25px;
+    color:white;
+}
+
+.form input{
+    width:60%;
+    display:inline-block;
+    height:30px;
+    border-radius:5px;
+    border-color:transparent;
+    border-width:0;
+    margin-right:10xp;
+    margin-bottom:30px;
+    font-size:26px;
+    
+}
+
+.form button{
+    width:150px;
+    display:inline-block;
+    font-size:20px;
+    height:30px;
+    border-radius:5px;
+    border-width:0;
+    background-color:#03DAC6;
+    border-color:transparent;
+    color:#121212;
+    cursor:pointer;
+    margin-left:10px;
+    margin-bottom:30px;
+    transition:0.3s;
+    transform:translateY(-5%);
+}
+
+.form button:hover{
+    background-color:#03DDA6;
+}
+
+.inBasket{
+    text-decoration:line-through;
+}
+
+.shoppingList ul{
+    text-decoration:none;
+    list-style:none;
+}
+
+.shoppingList ul li{
+    font-size:35px;
+    text-align:left;
+    margin-left:10%;
+}
+
+.icons{
+    transform:translateY(-100%);
+    float:right;
+    width:150px;
+    /* background-color:red; */
+    
+}
+
+.buttonIcon{
+    color:#03DAC6;
+    display:inline-block;
+    cursor:pointer;
+    font-size:35px;
+    transition:0.3s;
+    margin-left:10px;
+    
+}
+
+.buttonIcon:hover{
+    color:#03DDA6;
+}
+
+@media (max-width:900px){
+    .newList{
+        text-align:center;
+        width:80vw;
+    }
+    .buttonIcon{
+        margin-left:10px;
+        
+    }
+}
+
+@media (max-width:600px){
+    .newList{
+        text-align:center;
+        width:100vw;
+    }
+    
+    .form input{
+        width:90%;
+    }
+
+    .form button{
+        width:50%;
+    }
+}
+
+@media (min-width:1200px){
+    body{
+        background-color:red;
+    }
+
+    .form input{
+        width:70%;
+    }
+    
+
+    .buttonIcon{
+        margin-left:10px;
+        transform:translateX(-350%);
+        
+    }
+
+    
+    
+}

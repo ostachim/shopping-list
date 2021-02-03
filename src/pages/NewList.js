@@ -38,7 +38,7 @@ const NewList = () => {
     
 
     return(
-        <div>
+        <div className="newList">
             <h1>Lista zakupów</h1>
             <div className="form">
                 <input type="text" value={inputValue} onChange={handleOnChangeInputValue}/>
