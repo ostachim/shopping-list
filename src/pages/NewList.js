@@ -2,11 +2,26 @@ import React, {useState} from 'react';
 
 import ShoppingItem from '../components/shoppingItem';
 
+import { AiFillDelete } from "react-icons/ai";
+import { FaShoppingCart } from 'react-icons/fa';
+
 const NewList = () => {
     const list = []
     const [shoppingList, setShoppingList] = useState(list);
     const [inputValue, setInputValue] = useState("");
+    const [toggle, setToggle] = useState(false);
 
+    const probablyList = [
+        {
+            name:"item",
+            inBasket:false,
+        },
+        {
+            name:inputValue,
+            inBasket:false,
+        },
+        {},
+    ]
 
 
 
@@ -14,7 +29,7 @@ const NewList = () => {
 
     const handleOnClick = () => {
         const item = inputValue;
-        setShoppingList([...shoppingList,item]);
+        setShoppingList([...shoppingList,{name:item, inBasket:false}]);
         setInputValue("");
 
     }
@@ -26,14 +41,34 @@ const NewList = () => {
         setShoppingList([...newList])
     }
     
+    
 
-
-    const shopping = shoppingList.map((item,index) => <ShoppingItem 
-        item={item} 
+    const shopping = shoppingList.map((item,index) => 
+    <>
+    <li id={index} style={item.inBasket? {textDecoration:"line-through"}:null}>{item.name}</li>
+    <div className="icons">
+            <FaShoppingCart className="buttonIcon" onClick={() => 
+                {
+                    item.inBasket = !item.inBasket;
+                    setToggle(!toggle);
+                }
+            }>w koszyku</FaShoppingCart> 
+            <AiFillDelete className="buttonIcon" onClick={() => handleDeleteItem(index)}>usuń</AiFillDelete>
+    </div>
+    
+    {/* <ShoppingItem 
+        item={item.name} 
+        inBasket={item.inBasket}
         value={shoppingList} 
         index={index}
         handleDeleteItem = {handleDeleteItem}
-    />)
+    /> */}
+    </>
+    
+        
+    
+    
+    )
 
     
 
