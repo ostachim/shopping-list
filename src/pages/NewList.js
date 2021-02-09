@@ -28,9 +28,14 @@ const NewList = () => {
     const handleOnChangeInputValue = (e) => setInputValue(e.target.value);
 
     const handleOnClick = () => {
-        const item = inputValue;
-        setShoppingList([...shoppingList,{name:item, inBasket:false}]);
-        setInputValue("");
+        if(inputValue !== ""){
+            const item = inputValue;
+            setShoppingList([...shoppingList,{name:item, inBasket:false}]);
+            setInputValue("");
+        }else {
+            alert("podaj jakąś wartość")
+        }
+        
 
     }
 
@@ -76,7 +81,7 @@ const NewList = () => {
         <div className="newList">
             <h1>Lista zakupów</h1>
             <div className="form">
-                <input type="text" value={inputValue} onChange={handleOnChangeInputValue}/>
+                <input placeholder="dodaj jakiś produkt" type="text" value={inputValue} onChange={handleOnChangeInputValue}/>
                 <button onClick={handleOnClick}>Dodaj</button>
                 
             </div>
